@@ -1,0 +1,8 @@
+%div.buy
+  = form_for @stock, :remote => true do |f|
+    = f.label :symbol
+    = f.text_field :symbol, :autofocus => true
+    = f.label :shares
+    = f.number_field :shares
+    = link_to('Cancel', '#', :id => 'cancel_stock_form', :class => 'btn btn-danger')
+    = f.submit 'Buy Stock',  :class => 'btn btn-success'

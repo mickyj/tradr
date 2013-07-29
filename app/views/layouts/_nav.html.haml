@@ -1,0 +1,13 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .nav-collapse
+        %ul.nav
+          %li.link= link_to 'Home',  root_path
+          %li.link= link_to 'Users', users_path
+          %li.link= link_to 'Stocks', stocks_path
+          %li.navright= login_nav
+          %li= user_logged_in_nav
+      .nav.pull-right
+        %h2
+          TRADR

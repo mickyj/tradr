@@ -1,0 +1,207 @@
+/* NAVIGATION CUSTOMISATIONS */
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+$btnPrimaryBackground: black;
+$navbarLinkColor: black;
+$navbarLinkColorHover: #E13E06;
+
+@import 'bootstrap';
+body{
+  padding-top: 60px;
+  background-color: #F0F0F0;
+}
+
+div.container {
+  max-width: 80%;
+  margin: 0 auto;
+
+}
+
+div.box {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+li.navright {
+  padding-left: 150px;
+}
+
+
+
+// #chart {
+//   height: 250px;
+//   width: 250px;
+// }
+
+ul li {
+  display: inline;
+}
+
+@import 'bootstrap-responsive';
+
+/* UNIVERSAL COLOURS */
+
+$orange: #E13E06;
+$green: #2ECC71;
+$blue: #4099FF;
+$darkpink: #D9014F;
+$pink: #FC658E;
+$mould: #A9AB19;
+$white: #fff;
+$red: #FF0000;
+$yellow: #EFAE1B;
+
+.navbar-inner {
+  @include box-shadow(none !important);
+  border: 0;
+}
+
+/* FOOTER NAVIGATION */
+.footer {
+  margin-top: 50px;
+  padding: 10px;
+  color: $grayLight;
+  background-color: $yellow;
+  a{
+    color: $white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #E13E06;
+  }
+}
+
+a {
+color: $darkpink;
+text-decoration: none;
+}
+
+a:hover {
+color: $blue;
+text-decoration: none;
+}
+
+/* CUSTOMISING BOOTSTRAP BUTTONS */
+.btn {
+  border: none;
+  background: #bdc3c7;
+  color: #fff;
+  padding: 3px 4px 3px 4px;
+  line-height: 15px;
+  font-size: 10px;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 2px;
+  box-shadow: none;
+  a {
+    color: $white;
+    text-decoration: none;
+    }
+    a:hover {
+    color: $white;
+    text-decoration: none;
+    }
+}
+
+.btn.btn-large {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 12px 18px 13px;
+  background-color: $green;
+  border-radius: 5px;
+}
+
+.btn.btn-large:hover {
+  background-color: $darkpink;
+  color: $white;
+}
+
+.btn.btn-primary {
+  background-color: $green;
+}
+
+.btn.btn-primary:hover {
+  background-color: $darkpink;
+}
+
+.btn.btn-info {
+  font-color: $white;
+  background-color: $blue;
+  font-size: 12px;
+}
+
+.btn.btn-info:hover {
+  background-color: $darkpink;
+}
+
+.btn.btn-danger {
+  background-color: $red;
+  font-size: 12px;
+}
+
+.btn.btn-danger:hover {
+  background-color: $darkpink;
+}
+
+.btn.btn-success {
+  background-color: $blue;
+  font-size: 12px;
+}
+.btn.btn-success:hover {
+  background-color: $darkpink;
+}
+
+.btn.btn-warning {
+  background-color: #f1c400;
+  font-size: 12px;
+}
+
+.btn.btn-warning:hover {
+  background-color: $darkpink;
+  text-decoration: none;
+}
+
+.btn.btn-inverse {
+  background-color: $yellow;
+  font-size: 12px;
+}
+
+.btn.btn-inverse:hover {
+  background-color: $darkpink;
+}
+
+
+
+/* LONG SHADOW EFFECTS */
+@function makelongshadow($orange) {
+  $val: 0px 0px $orange;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$orange};
+  }
+  @return $val;
+}
+
+@mixin longshadow($orange) {
+  text-shadow: makelongshadow($orange);
+}
+
+h1, h4 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: 75px;
+    color: #fff;
+    @include longshadow(darken(#F5AE3D, 5% ));
+}
+
+h4 {
+  font-size: 40px;
+}
+
+em {
+  color: #fff ;
+  display: inline-block;
+  @include longshadow(darken(#0C7EFF, 8% ));
+}

@@ -1,0 +1,8 @@
+$('#new_user').fadeOut(function () {
+  $(this).empty().show();
+});
+
+$('#users').html('<%=j render(:partial => 'users') %>'); //repopulate the users with the users data
+
+//tells how browsser to handle
+//empty the form, on line 5 select the users class from the index html page  and replace its html with the users list

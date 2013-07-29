@@ -1,0 +1,6 @@
+%h2 Current Users
+- @users.each do |user|
+  %p
+    = user.email
+    = number_to_currency user.balance
+
