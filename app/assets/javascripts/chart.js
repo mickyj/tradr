@@ -1,33 +1,49 @@
 $(document).ready(function () {
 
-  var show_chart = function () {
-    var stock = $(this).attr('id'); //gets current clicked on activity and get json data via ajax,
+  var show_chart = function (charts) {
 
+  $.each(charts, function (i, chartName) {
     $.ajax({
-      dataType: 'json',
-      type: 'get',
-      url: '/stocks/chart/' + stock
+        url: '/stocks/charts/' + chartName,
+        dataType: 'json',
+        type: 'GET'
     }).done(process_stock);
-  };
+  });
+};
+
+
 
 
 var process_stock = function (stocks) {
-
-    $('#chart').empty();
+    console.log('process stock');
+    // $('#chart').empty();
     new Morris.Line({
-      element: 'chart',
+      element: 'chart_' + stocks[0].symbol,
       data: stocks,
-      xkey: 'symbol',
-      ykeys: ['purchase_price'],
-      labels: [stocks],
+      xkey: 'date',
+      ykeys: ['close'],
+      labels: ['close'],
     });
+
+
+
+
   };
 
 
+ $('#stocks').on('change','.show_chart', function () {
 
+    var $stocks = $(this).closest('#stocks');
 
+    var $checked = $stocks.find(':checked');
 
-  $('.show_chart').change(show_chart) //trigger simulates the click on open (rather than needing it to open on dropdown)
+    var charts = $checked.map(function () {
+        return $(this).attr('name');
+    }).get();
+    show_chart (charts);
+    console.log(charts);
+ });
+
 
 });
 

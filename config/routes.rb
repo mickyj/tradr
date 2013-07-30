@@ -3,7 +3,7 @@ Tradr::Application.routes.draw do
   resources :users, :only => [:index, :new, :create]
   resources :stocks, :only => [:index, :new, :create] do
     collection do
-      get '/chart/:symbol', :action => 'chart'
+      get '/charts/:charts', :action => 'chart'
     end
   end
 

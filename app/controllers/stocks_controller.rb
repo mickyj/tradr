@@ -8,9 +8,11 @@ class StocksController < ApplicationController
   end
 
   def chart
-    render :json => @auth.stocks.where(:symbol => params[:symbol])
+    symbols = params[:charts]
 
+    result = YahooFinance::get_HistoricalQuotes_days( symbols, 30 )
 
+    render :json => result
   end
 
   # def new

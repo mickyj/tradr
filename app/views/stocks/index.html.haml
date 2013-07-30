@@ -8,3 +8,5 @@
 
 
 %div#chart
+  - @auth.stocks.each do |stock|
+    %div{ :id=>"chart_#{stock.symbol}" }
