@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
 var process_stock = function (stocks) {
-    console.log('process stock');
+
     // $('#chart').empty();
     new Morris.Line({
       element: 'chart_' + stocks[0].symbol,
@@ -29,11 +29,11 @@ var process_stock = function (stocks) {
 
 
   };
-
+// .closest('#stocks')
 
  $('#stocks').on('change','.show_chart', function () {
 
-    var $stocks = $(this).closest('#stocks');
+    var $stocks = $(this).parent();
 
     var $checked = $stocks.find(':checked');
 
